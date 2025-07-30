@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module StreamAndJDBCProject {
+	requires myassignments;
+}

@@ -1,0 +1,224 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mahesh's Portfolio — Sample HTML Project</title>
+  <meta name="description" content="A compact single-file portfolio demonstrating many HTML tags and features.">
+  <style>
+    /* Minimal styling for the sample project */
+    :root{ --accent:#0b6cf0; --muted:#666; --card:#fff; --bg:#f5f7fb }
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#222}
+    .container{max-width:980px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    header h1{margin:.2rem 0}
+    nav a{margin-left:12px;text-decoration:none;color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1fr 260px;gap:18px;margin:18px 0}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,40,0.06)}
+    .me{width:100%;height:auto;border-radius:8px}
+    ul.skills{display:flex;flex-wrap:wrap;gap:8px;padding-left:0;list-style:none;margin:0}
+    ul.skills li{background:#eef6ff;padding:6px 10px;border-radius:999px;font-size:14px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px}
+    .contact-row{display:flex;gap:8px;flex-wrap:wrap}
+    input,textarea,select,button{font:inherit;padding:8px;border:1px solid #ddd;border-radius:6px}
+    button{background:var(--accent);color:#fff;border:none}
+    .muted{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:760px){.hero{grid-template-columns:1fr} .grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Mahesh G.</h1>
+        <p class="muted">Automation Tester • Java • Selenium • Curious builder</p>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <article class="card">
+        <h2 id="about">About me</h2>
+        <p>I build test automation, explore web development, and enjoy clear code. This single-file portfolio demonstrates many HTML elements.</p>
+
+        <h3>Skills</h3>
+        <ul class="skills">
+          <li>Java</li>
+          <li>Selenium</li>
+          <li>REST Assured</li>
+          <li>JMeter</li>
+          <li>SQL</li>
+          <li>HTML/CSS/JS</li>
+        </ul>
+
+        <h3>Experience</h3>
+        <table aria-labelledby="exp">
+          <caption id="exp">Selected experience</caption>
+          <thead>
+            <tr><th>Year</th><th>Role</th><th>Company</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2024</td><td>Automation Tester</td><td>Example Corp</td></tr>
+            <tr><td>2025</td><td>QA Engineer</td><td>Example Labs</td></tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>More about my workflow</summary>
+          <p>I prefer small, testable modules, CI pipelines with Jenkins/GitHub Actions, and readable test reports.</p>
+        </details>
+
+      </article>
+
+      <aside class="card" aria-label="Profile">
+        <figure>
+          <img src="https://via.placeholder.com/240x240.png?text=Profile" alt="Profile photo" class="me">
+          <figcaption class="muted">Photo (placeholder)</figcaption>
+        </figure>
+
+        <h4>Contact</h4>
+        <p class="muted">Email: <a href="mailto:mahesh@example.com">mahesh@example.com</a></p>
+
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact me</a></li>
+        </ul>
+
+        <progress value="75" max="100">75%</progress>
+        <p class="muted">Profile completion</p>
+      </aside>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <article>
+        <h3>1) Mini To‑Do (HTML / JS)</h3>
+        <p>Simple to-do shows use of <code>form</code>, <code>input</code>, <code>button</code>, <code>ul/li</code>, and local interactivity.</p>
+
+        <form id="todo-form" onsubmit="return false;" aria-label="Add task">
+          <label for="task">New task</label>
+          <div class="contact-row">
+            <input id="task" name="task" required placeholder="Describe task" />
+            <button id="add-btn" type="submit">Add</button>
+          </div>
+        </form>
+        <ul id="todo-list"></ul>
+      </article>
+
+      <article>
+        <h3>2) Embedded media</h3>
+        <p>Video and audio examples (sources are placeholders).</p>
+        <video controls width="360" preload="metadata">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <audio controls>
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </article>
+
+      <article>
+        <h3>3) Canvas drawing demo</h3>
+        <canvas id="art" width="300" height="140" style="border:1px solid #ddd;display:block;margin-top:8px"></canvas>
+      </article>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <form id="contact-form" action="#" method="post">
+        <fieldset>
+          <legend>Send a message</legend>
+          <label for="name">Name</label><br>
+          <input id="name" name="name" type="text" placeholder="Your name" required><br>
+
+          <label for="email">Email</label><br>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required><br>
+
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message" rows="4" placeholder="Write something"></textarea><br>
+
+          <label for="topic">Topic</label><br>
+          <select id="topic" name="topic">
+            <optgroup label="General">
+              <option value="hire">Hiring</option>
+              <option value="project">Project</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="questions">Questions</option>
+            </optgroup>
+          </select>
+
+          <div style="margin-top:8px">
+            <button type="submit">Send</button>
+            <button type="reset">Reset</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <footer class="muted">
+      <p>&copy; <span id="year"></span> Mahesh G. — Built with semantic HTML.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Small JavaScript to make demo interactive (uses many DOM operations)
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // To‑Do app logic
+    const todoForm = document.getElementById('todo-form');
+    const taskInput = document.getElementById('task');
+    const todoList = document.getElementById('todo-list');
+
+    todoForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const val = taskInput.value.trim();
+      if(!val) return;
+      const li = document.createElement('li');
+      li.innerHTML = `<span>${escapeHtml(val)}</span> <button class="done">Done</button> <button class="del">Delete</button>`;
+      todoList.appendChild(li);
+      taskInput.value = '';
+    });
+
+    todoList.addEventListener('click', function(e){
+      if(e.target.classList.contains('del')){
+        e.target.closest('li').remove();
+      } else if(e.target.classList.contains('done')){
+        const span = e.target.closest('li').querySelector('span');
+        span.style.textDecoration = 'line-through';
+      }
+    });
+
+    function escapeHtml(s){ return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+
+    // Canvas demo: draw simple gradient and text
+    const c = document.getElementById('art');
+    if(c && c.getContext){
+      const ctx = c.getContext('2d');
+      const grad = ctx.createLinearGradient(0,0,300,0);
+      grad.addColorStop(0,'#0b6cf0');
+      grad.addColorStop(1,'#2dd4bf');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,300,140);
+      ctx.font = '18px sans-serif';
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      ctx.fillText('Canvas demo', 12, 30);
+    }
+
+    // Small progressive enhancement: handle contact form submission locally
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks! This demo does not send messages — add backend to process submissions.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

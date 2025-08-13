@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Tuition Catalog</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .math-title { color: #0d6efd; }
+    .science-title { color: #198754; } 
+    .english-title { color: #fd7e14; }
+    .btn-math {
+      background-color: #0d6efd;
+      color: white;
+    }
+    .btn-science {
+      background-color: #198754;
+      color: white;
+    }
+    .btn-english {
+      background-color: #fd7e14;
+      color: white;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <h2 class="text-center mb-4">
+    📚 <strong>Professional Tuition Catalog</strong>
+  </h2>
+  
+  <div class="row g-4">
+    
+    <!-- Mathematics Tuition -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card position-relative h-100">
+        <span class="badge bg-success">Best Seller</span>
+        <img src="C:\Users\dell\Pictures\Screenshots\Screenshot 2025-08-12 153234.png" class="card-img-top" alt="Mathematics Tuition">
+        <div class="card-body">
+          <h5 class="card-title math-title">Mathematics Tuition</h5>
+          <p class="card-text">Expert coaching for Class 8–12. Includes weekly tests, exam preparation, and doubt clearing.</p>
+          <p><i class="bi bi-person-fill"></i> <strong>Teacher:</strong> Mr. Raj Kumar</p>
+          <p><i class="bi bi-clock-fill"></i> <strong>Duration:</strong> 3 Months</p>
+          <p>₹ <strong>Fee:</strong> ₹5,000</p>
+          <a href="#" class="btn btn-math w-100">Enroll Now</a>
+        </div>
+        <div class="card-footer text-center text-muted">Limited seats available!</div>
+      </div>
+    </div>
+
+    <!-- Science Tuition -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card position-relative h-100">
+        <img src="C:\Users\dell\Pictures\Screenshots\Screenshot 2025-08-12 153240.png" class="card-img-top" alt="Science Tuition">
+        <div class="card-body">
+          <h5 class="card-title science-title">Science Tuition</h5>
+          <p class="card-text">Covers Physics, Chemistry and Biology. Perfect for board & competitive exams.</p>
+          <p><i class="bi bi-person-fill"></i> <strong>Teacher:</strong> Mrs. Priya Sharma</p>
+          <p><i class="bi bi-clock-fill"></i> <strong>Duration:</strong> 4 Months</p>
+          <p>₹ <strong>Fee:</strong> ₹6,500</p>
+          <a href="#" class="btn btn-science w-100">Enroll Now</a>
+        </div>
+        <div class="card-footer text-center text-muted">Hurry! Classes filling fast</div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="card position-relative h-100">
+        <img src="C:\Users\dell\Pictures\Screenshots\Screenshot 2025-08-12 153247.png" class="card-img-top" alt="English Tuition">
+        <div class="card-body">
+          <h5 class="card-title english-title">English Tuition</h5>
+          <p class="card-text">Grammar, vocabulary, and speaking skills for school and professional needs.</p>
+          <p><i class="bi bi-person-fill"></i> <strong>Teacher:</strong> Mr. Anil Verma</p>
+          <p><i class="bi bi-clock-fill"></i> <strong>Duration:</strong> 2 Months</p>
+          <p>₹ <strong>Fee:</strong> ₹4,000</p>
+          <a href="#" class="btn btn-english w-100">Enroll Now</a>
+        </div>
+        <div class="card-footer text-center text-muted">Weekend batches available</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

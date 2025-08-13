@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Feedback Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #e6e6e6;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            flex: 3;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        textarea {
+            height: 80px;
+        }
+        aside {
+            background: #fff8dc;
+            padding: 15px;
+            border-radius: 5px;
+            flex: 1;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #e6e6e6;
+            margin-top: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        input[type="submit"], input[type="reset"] {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="reset"] {
+            background-color: white;
+            color: #0066cc;
+            border: 1px solid #0066cc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Website Feedback Survey</h1>
+        <p>We value your opinion. Please take a minute to share your thoughts.</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <form action="feedback.php" method="POST">
+       
+            <section>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" required>
+
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="10" max="100">
+                </fieldset>
+            </section>
+
+      
+            <section>
+                <fieldset>
+                    <legend>Website Rating</legend>
+                    <label for="design">Design (1–10):</label>
+                    <input type="range" id="design" name="design" min="1" max="10">
+
+                    <label>Content Quality:</label>
+                    <input type="radio" name="content" value="Excellent"> Excellent
+                    <input type="radio" name="content" value="Good"> Good
+                    <input type="radio" name="content" value="Average"> Average
+                    <input type="radio" name="content" value="Poor"> Poor
+
+                    <label for="page">Most visited page:</label>
+                    <select id="page" name="page">
+                        <option value="Home">Home</option>
+                        <option value="Blog">Blog</option>
+                        <option value="Products">Products</option>
+                        <option value="Contact">Contact</option>
+                    </select>
+                </fieldset>
+            </section>
+
+            <section>
+                <fieldset>
+                    <legend>Suggestions</legend>
+                    <textarea name="suggestions" placeholder="Write your suggestions here..."></textarea>
+                    <input type="checkbox" name="contact"> I agree to be contacted regarding my feedback
+                </fieldset>
+            </section>
+
+            <div class="buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+
+        <aside>
+            <h3>Why your feedback matters</h3>
+            <p>Your feedback helps us improve our website experience for everyone. Thank you!</p>
+        </aside>
+    </main>
+
+    <footer>
+        © 2025 Website Survey
+    </footer>
+
+</body>
+</html>

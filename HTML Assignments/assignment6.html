@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Lab — Gallery</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.5;
+    }
+    header {
+        background-color: #2e2e2e;
+        color: white;
+        padding: 15px;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 1.8em;
+    }
+    header p {
+        margin: 5px 0 0;
+        font-size: 1em;
+        color: #ccc;
+    }
+    main {
+        display: flex;
+        gap: 30px;
+        margin-top: 20px;
+    }
+    section.gallery {
+        flex: 2;
+    }
+    section.gallery h2 {
+        margin-bottom: 15px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    figure {
+        margin: 0;
+        text-align: center;
+    }
+    figure img, svg {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+    }
+    figcaption {
+        margin-top: 5px;
+        font-size: 0.9em;
+    }
+    aside {
+        flex: 1;
+    }
+    aside h2 {
+        margin-bottom: 10px;
+    }
+    hr {
+        margin: 20px 0;
+    }
+    button {
+        padding: 8px 16px;
+        background-color: white;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Image Lab — Gallery</h1>
+    <p>Practice with &lt;img&gt;, srcset, &lt;picture&gt;, SVG, and accessibility</p>
+</header>
+
+<main>
+
+    <section class="gallery">
+        <h2>Responsive Image Gallery</h2>
+        <div class="grid">
+          
+            <figure>
+                <img src="C:\users\mahesh\Downloads\WhatsApp Image 2025-08-11 at 9.54.42 PM (2).jpeg" alt="Basmati rice — 5 kg bag">
+                <figcaption>Basmati rice — 5 kg bag.</figcaption>
+            </figure>
+        
+            <figure>
+                <picture>
+                    
+                    <img src="C:\users\mahesh\Downloads\WhatsApp Image 2025-08-11 at 9.54.42 PM (3).jpeg" alt="Assorted Snacks Box" loading="lazy">
+                </picture>
+                <figcaption>Assorted Snacks Box <br>(WebP served when supported).</figcaption>
+            </figure>
+          
+            <figure>
+                <svg width="100" height="60" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="truckTitle truckDesc">
+                    <title id="truckTitle">Delivery truck</title>
+                    <desc id="truckDesc">A delivery truck icon in blue and black</desc>
+                    <rect width="60" height="30" y="15" fill="#00a2ff" stroke="black"/>
+                    <rect x="60" y="15" width="40" height="30" fill="white" stroke="black"/>
+                    <circle cx="20" cy="50" r="6" fill="black"/>
+                    <circle cx="70" cy="50" r="6" fill="black"/>
+                </svg>
+                <figcaption>Delivery truck (SVG inline with accessible title/desc).</figcaption>
+            </figure>
+        
+            <figure aria-hidden="true">
+                <img src="C:\users\mahesh\Downloads\WhatsApp Image 2025-08-11 at 9.54.42 PM (4).jpeg" alt="">
+                <figcaption>Decorative divider <br>(not read by screen readers).</figcaption>
+            </figure>
+         
+            <figure>
+                <img src="C:\users\mahesh\Downloads\WhatsApp Image 2025-08-11 at 9.54.42 PM.jpeg" alt="Store map with rice and snacks aisles" usemap="#storemap">
+                <map name="storemap">
+                    <area shape="rect" coords="0,0,100,100" href="#rice" alt="Rice aisle">
+                    <area shape="rect" coords="100,0,200,100" href="#snacks" alt="Snacks aisle">
+                </map>
+                <figcaption>Click a section to navigate to that aisle (image map)</figcaption>
+            </figure>
+        </div>
+    </section>
+
+   
+    <aside>
+        <h2>Notes</h2>
+        <p>Use <code>srcset</code> and <code>&lt;picture&gt;</code> to reduce bandwidth and serve modern formats.</p>
+        <p>Add <code>loading="lazy"</code> to defer-screen images.</p>
+    </aside>
+</main>
+
+<hr>
+
+<section>
+    <h3>Submit Lab</h3>
+    <button type="submit">Submit Lab</button>
+</section>
+
+</body>
+</html>

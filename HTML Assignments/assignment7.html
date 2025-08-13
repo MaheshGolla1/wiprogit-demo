@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Multimedia Lab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+        h1 {
+            font-size: 1.8em;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        video, audio, embed, iframe {
+            display: block;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML5 Multimedia Lab</h1>
+    <p>This page demonstrates video, audio, embed (PDF), iframe, and inline SVG. Below is a visual preview.</p>
+
+    <h3>Video (sample.mp4)</h3>
+    <video controls poster="poster.jpg">
+        <source src="https://youtu.be/G3e-cpL7ofc?si=-CHj7Bavb_Ow_71g" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h3>Audio (sample.mp3)</h3>
+    <audio controls loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h3>Embed (document.pdf)</h3>
+    <embed src="C:\Users\dell\Downloads\ZIPKIN_SLEUTH_BRAVE_TRACING.pdf" type="application/pdf" width="200" height="200">
+    <p>If not visible, <a href="document.pdf">download document.pdf</a></p>
+
+    <h3>Iframe (demo.html)</h3>
+    <iframe src="demo.html" width="100%" height="200" title="Demo HTML Preview"></iframe>
+    <p>Preview created for the HTML5 Multimedia Lab. Files saved in the workspace.</p>
+
+    <h3>Inline SVG</h3>
+    <svg width="100" height="100" viewBox="0 0 100 100">
+        <polygon points="30,20 80,50 30,80" fill="red" />
+    </svg>
+
+</body>
+</html>

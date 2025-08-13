@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.hover-line {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.hover-line::after {
+  content: " 😊 😄 😎 🤩 🥳 😊 😄 😎 🤩 🥳";
+  position: absolute;
+  white-space: nowrap;
+  opacity: 0;
+  left: 100%;
+}
+
+.hover-line:hover::after {
+  opacity: 1;
+  animation: emojiScroll 10s linear infinite;
+}
+
+</style>
+</head>
+<body>
+
+<p>Welcome to Wipro!</p>
+<p class="hover-line">Congratulations, Mahesh G — you have been selected.</p>
+<p>Your onboarding is scheduled for September 10.</p>
+
+</body>
+</html>

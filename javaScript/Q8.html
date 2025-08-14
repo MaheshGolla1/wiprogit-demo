@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Switchboard Control</title>
+    <meta charset="UTF-8">
+    <script>
+        function controlSwitchboard() {
+           
+            const buildingName = "blooms";
+            let status = "OFF";
+            const devices = ["Light", "Fan", "AC"];
+            for (var i = 0; i < devices.length; i++) {
+             
+                status = (status === "OFF") ? "ON" : "OFF";
+
+                console.log(`Checking Switch ${i + 1}: ${devices[i]} is ${status}`);
+            }
+            console.log(`All switches checked for ${buildingName}.`);
+            console.log(`Outside loop: var counter is ${i}`);
+
+            try {
+                buildingName = "glooms";
+            } catch (err) {
+                console.error("Error:", err.message);
+            }
+        }
+    </script>
+</head>
+<body onload="controlSwitchboard()">
+    <h2>Check the Console for Output</h2>
+</body>
+</html>

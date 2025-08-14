@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tour Booking Form</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, button {
+            margin-top: 5px;
+            padding: 5px;
+            width: 200px;
+        }
+        .summary {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #333;
+            background: #f9f9f9;
+            width: 300px;
+        }
+    </style>
+    <script>
+        function bookTour() {
+         
+            let name = document.getElementById("fullName").value;
+            let email = document.getElementById("email").value;
+            let destination = document.getElementById("destination").value;
+            let days = parseInt(document.getElementById("days").value);
+            let travelers = parseInt(document.getElementById("travelers").value);
+
+           
+            let pricePerDay;
+            if (destination === "Ooty") {
+                pricePerDay = 2000;
+            } else if (destination === "Goa") {
+                pricePerDay = 3000;
+            } else if (destination === "Manali") {
+                pricePerDay = 4000;
+            }
+
+            let totalPrice = pricePerDay * days * travelers;
+
+          
+            document.getElementById("summary").innerHTML = `
+                <strong>Booking Summary:</strong><br>
+                Name: ${name}<br>
+                Email: ${email}<br>
+                Destination: ${destination}<br>
+                Days: ${days}<br>
+                Travelers: ${travelers}<br>
+                Total Price: ₹${totalPrice}
+            `;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Tour Booking Form</h2>
+    <form onsubmit="event.preventDefault(); bookTour();">
+        <label>Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Destination:</label>
+        <select id="destination" required>
+            <option value="">--Select--</option>
+            <option value="Ooty">Ooty</option>
+            <option value="Goa">Goa</option>
+            <option value="Manali">Manali</option>
+        </select>
+
+        <label>Number of Days:</label>
+        <input type="number" id="days" min="1" required>
+
+        <label>Number of Travelers:</label>
+        <input type="number" id="travelers" min="1" required>
+
+        <br><br>
+        <button type="submit">Book Now</button>
+    </form>
+
+    <div id="summary" class="summary"></div>
+
+</body>
+</html>

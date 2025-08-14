@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Game</title>
+    <meta charset="UTF-8">
+    <script>
+        function startQuiz() {
+           
+            alert("Welcome to the Quiz Game!");
+
+           
+            let userName = prompt("What is your name?");
+
+            if (!userName) {
+                alert("You didn't enter your name. Let's call you 'Player'.");
+                userName = "Player";
+            }
+
+          
+            let isReady = confirm(`Hello ${userName}, are you ready for the quiz?`);
+
+            if (isReady) {
+              
+                let answer = prompt("What is the capital of India?\nA) hyderabad\nB) chennai\nC) delhi\nD) mysore");
+
+               
+                if (answer && answer.toLowerCase() === "c" || answer.toLowerCase() === "delhi") {
+                    alert(" Correct! The capital of india is delhi.");
+                } else {
+                    alert(" Wrong! The correct answer is delhi.");
+                }
+            } else {
+                alert("Okay! Come back when you are ready. Goodbye!");
+            }
+        }
+    </script>
+</head>
+<body onload="startQuiz()">
+</body>
+</html>

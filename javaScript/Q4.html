@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Customers Management</title>
+    <meta charset="UTF-8">
+    <script>
+        function manageCustomers() {
+          
+            let numCustomers = parseInt(prompt("How many customers do you want to register?"));
+
+            let customers = [];
+            for (let i = 0; i < numCustomers; i++) {
+                let name = prompt(`Enter name of customer ${i + 1}:`);
+                customers.push(name);
+            }
+
+            alert("Original Customers: " + customers.join(", "));
+
+            let namesOutput = "Customers using for...of:\n";
+            for (let name of customers) {
+                namesOutput += name + "\n";
+            }
+
+            let idsOutput = "Customer IDs using for...in:\n";
+            for (let id in customers) {
+                idsOutput += id + "\n";
+            }
+
+            alert(namesOutput + "\n" + idsOutput);
+
+            let newCustomer = prompt("Enter name of new customer to add at the end:");
+            customers.push(newCustomer);
+            alert("After push('" + newCustomer + "'): " + customers.join(", "));
+
+            let removed = customers.pop();
+            alert(`After pop() [Removed: ${removed}]: ${customers.join(", ")}`);
+
+            let insertPos = parseInt(prompt("Enter the position (starting from 0) to insert a new customer:"));
+            let insertName = prompt("Enter the name of customer to insert:");
+            customers.splice(insertPos, 0, insertName);
+            alert(`After insert '${insertName}' at position ${insertPos}: ${customers.join(", ")}`);
+
+            let deletePos = parseInt(prompt("Enter the position (starting from 0) of customer to delete:"));
+            let deleted = customers.splice(deletePos, 1);
+            alert(`After delete at position ${deletePos} [Removed: ${deleted}]: ${customers.join(", ")}`);
+
+            alert("Final Customers: " + customers.join(", "));
+        }
+    </script>
+</head>
+<body onload="manageCustomers()">
+</body>
+</html>

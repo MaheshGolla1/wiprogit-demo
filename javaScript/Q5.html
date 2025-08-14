@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Store Management</title>
+    <meta charset="UTF-8">
+    <script>
+        function manageBooks() {
+          
+            let numBooks = parseInt(prompt("How many books do you want to register?"));
+            let books = [];
+            for (let i = 0; i < numBooks; i++) {
+                let title = prompt(`Enter title of book ${i + 1}:`);
+                let author = prompt(`Enter author of book ${i + 1}:`);
+                let price = parseFloat(prompt(`Enter price of book ${i + 1} (₹):`));
+                let available = confirm(`Is "${title}" available? (OK = Yes, Cancel = No)`);
+                books.push({ title: title, author: author, price: price, available: available });
+            }
+            let allBooksOutput = "All Books:\n";
+            for (let book of books) {
+                allBooksOutput += `Title: ${book.title}, Author: ${book.author}, Price: ₹${book.price}, Available: ${book.available}\n`;
+            }
+            alert(allBooksOutput);
+            let availableBooksOutput = "Available Books:\n";
+            for (let book of books) {
+                if (book.available) {
+                    availableBooksOutput += `Title: ${book.title}, Author: ${book.author}, Price: ₹${book.price}\n`;
+                }
+            }
+            alert(availableBooksOutput);
+            let newTitle = prompt("Enter new book title:");
+            let newAuthor = prompt("Enter new book author:");
+            let newPrice = parseFloat(prompt("Enter new book price (₹):"));
+            let newAvailable = confirm("Is the new book available? (OK = Yes, Cancel = No)");
+            books.push({ title: newTitle, author: newAuthor, price: newPrice, available: newAvailable });
+            alert("After Adding:\n" + books.map(b => b.title).join(", "));
+            let updateTitle = prompt("Enter the title of the book to update price:");
+            let found = false;
+            for (let book of books) {
+                if (book.title.toLowerCase() === updateTitle.toLowerCase()) {
+                    let updatedPrice = parseFloat(prompt(`Enter new price for "${book.title}" (₹):`));
+                    book.price = updatedPrice;
+                    found = true;
+                    alert("After Price Update:\n" + `${book.title} - ₹${book.price}`);
+                    break;
+                }
+            }
+            if (!found) {
+                alert("Book not found for price update.");
+            }
+            let deleteTitle = prompt("Enter the title of the book to delete:");
+            let initialLength = books.length;
+            books = books.filter(b => b.title.toLowerCase() !== deleteTitle.toLowerCase());
+            if (books.length < initialLength) {
+                alert("After Deletion:\n" + books.map(b => b.title).join(", "));
+            } else {
+                alert("Book not found for deletion.");
+            }
+        }
+    </script>
+</head>
+<body onload="manageBooks()">
+</body>
+</html>

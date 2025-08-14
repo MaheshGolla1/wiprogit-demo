@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Share Market Portfolio Tracker</title>
+</head>
+<body>
+<script>
+function createPortfolioTracker() {
+    let portfolio = []; // private
+
+    function buyShare(company, quantity, price) {
+        portfolio.push({ company, quantity, price });
+        console.log(`Bought ${quantity} shares of ${company} at ${price} each. ₹`);
+    }
+
+    function sellShare(company, quantity) {
+        let share = portfolio.find(s => s.company === company);
+        if (share) {
+            if (share.quantity >= quantity) {
+                share.quantity -= quantity;
+                console.log(`Sold ${quantity} shares of ${company}.`);
+            } else {
+                console.log(`Not enough shares of ${company} to sell.`);
+            }
+        } else {
+            console.log(`${company} not found in portfolio.`);
+        }
+    }
+
+    function totalValue() {
+        let total = portfolio.reduce((sum, share) => sum + (share.quantity * share.price), 0);
+        console.log(`Portfolio Value: ₹${total}`);
+    }
+
+    return { buyShare, sellShare, totalValue };
+}
+
+const myPortfolio = createPortfolioTracker();
+
+let actions = parseInt(prompt("How many actions do you want to perform?"));
+
+for (let i = 0; i < actions; i++) {
+    let choice = prompt("Enter action: buy / sell / total");
+
+    if (choice.toLowerCase() === "buy") {
+        let company = prompt("Enter company name:");
+        let quantity = parseInt(prompt("Enter quantity:"));
+        let price = parseFloat(prompt("Enter price per share:"));
+        myPortfolio.buyShare(company, quantity, price);
+
+    } else if (choice.toLowerCase() === "sell") {
+        let company = prompt("Enter company name:");
+        let quantity = parseInt(prompt("Enter quantity to sell:"));
+        myPortfolio.sellShare(company, quantity);
+
+    } else if (choice.toLowerCase() === "total") {
+        myPortfolio.totalValue();
+    } else {
+        console.log("Invalid action!");
+    }
+}
+</script>
+</body>
+</html>
